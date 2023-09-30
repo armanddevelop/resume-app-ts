@@ -3,26 +3,13 @@ import { Link } from "react-router-dom";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { IRoute } from "../../@types/@types.App";
 import { Box } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useProviderSideBar } from "../../Hooks/useProviderSideBar";
+
 interface INavBarProps {
   routes: IRoute[];
 }
 export const NavBar = ({ routes }: INavBarProps): JSX.Element => {
-  const [width, setWidth] = useState<number>(0);
-  const [collapse, setCollapse] = useState<boolean>(false);
-  const handleResize = () => {
-    console.log(window.innerWidth);
-    setWidth(window.innerWidth);
-  };
-  useEffect(() => {
-    // window.addEventListener("resize", handleResize);
-    if (width < 500) {
-      setCollapse(true);
-    } else {
-      setCollapse(false);
-    }
-    // return () => window.removeEventListener("resize", handleResize);
-  }, [width]);
+  const { collapse } = useProviderSideBar();
   const button = {
     [`&.active`]: {
       backgroundColor: "#13395e",
