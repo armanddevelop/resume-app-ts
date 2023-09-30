@@ -1,6 +1,6 @@
 import { Container, Box } from "@mui/material";
 import { useContext } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { ContextApp } from "../Context/ContextApp";
 import { ContextTypeApp } from "../@types/@types.App";
 import { NavBar } from "./Navbar/Navbar";
@@ -12,18 +12,16 @@ export const MainComponent = (): JSX.Element => {
   } = useContext(ContextApp) || ({} as ContextTypeApp);
   return (
     <Container maxWidth="lg">
+      <Box sx={{ display: "flex", alignItems: "baseline", gap: "25px" }}>
+        <NavBar routes={routes} />
+        <Routes>
+          {routes.map(({ element, path, name }) => {
+            return <Route path={path} element={element} key={name} />;
+          })}
+        </Routes>
+      </Box>
       <Box>
-        <NavBar />
-        <Router>
-          <Routes>
-            {routes.map(({ element, path, name }) => {
-              return <Route path={path} element={element} key={name} />;
-            })}
-          </Routes>
-        </Router>
-        <Box>
-          <Footer />
-        </Box>
+        <Footer />
       </Box>
     </Container>
   );

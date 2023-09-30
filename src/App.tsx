@@ -1,3 +1,5 @@
+import { BrowserRouter } from "react-router-dom";
+import { ProSidebarProvider } from "react-pro-sidebar";
 import { MainComponent } from "./Components/MainComponent";
 import { ContextApp } from "./Context/ContextApp";
 import { Home, AboutMe, Skills, Resume, Experience, NoMatch } from "./Pages";
@@ -6,27 +8,27 @@ const App = (): JSX.Element => {
   const routes = [
     {
       path: "/",
-      name: "home",
+      name: "Home",
       element: <Home />,
     },
     {
       path: "/aboutme",
-      name: "about",
+      name: "About",
       element: <AboutMe />,
     },
     {
       path: "/skills",
-      name: "skills",
+      name: "Skills",
       element: <Skills />,
     },
     {
       path: "/resume",
-      name: "resume",
+      name: "Resume",
       element: <Resume />,
     },
     {
       path: "/experience",
-      name: "experience",
+      name: "Experience",
       element: <Experience />,
     },
     {
@@ -44,7 +46,11 @@ const App = (): JSX.Element => {
         },
       }}
     >
-      <MainComponent />
+      <BrowserRouter>
+        <ProSidebarProvider>
+          <MainComponent />
+        </ProSidebarProvider>
+      </BrowserRouter>
     </ContextApp.Provider>
   );
 };
