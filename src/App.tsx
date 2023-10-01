@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { ProSidebarProvider } from "react-pro-sidebar";
+
 import { MainComponent } from "./Components/MainComponent";
 import { ContextApp } from "./Context/ContextApp";
 import { Home, AboutMe, Skills, Resume, Experience, NoMatch } from "./Pages";
@@ -47,9 +47,7 @@ const App = (): JSX.Element => {
       }}
     >
       <BrowserRouter>
-        <ProSidebarProvider>
-          <MainComponent />
-        </ProSidebarProvider>
+        <MainComponent />
       </BrowserRouter>
     </ContextApp.Provider>
   );
