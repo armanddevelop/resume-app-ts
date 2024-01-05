@@ -5,8 +5,10 @@ export interface IRoute {
 }
 
 interface IConfiguration {
-  namePage: string;
+  fullName?: string;
+  name: string;
   routes: IRoute[];
+  homePresentation: JSX.Element;
 }
 
 export type ContextTypeApp = {

@@ -1,3 +1,11 @@
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  h2.title_page {
+    white-space: nowrap;
+    font-size: 35px;
+  }
+  .application-container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }

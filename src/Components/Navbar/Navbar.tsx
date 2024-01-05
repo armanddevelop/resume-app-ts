@@ -16,8 +16,8 @@ export const NavBar = (props: INavBarProps): JSX.Element => {
   const { routes, setToggle, setBreakPoint, breakpoint, toggled } = props;
   const button = {
     [`&.active`]: {
-      backgroundColor: "#13395e",
-      color: "#b6c8d9",
+      backgroundColor: "#044d96",
+      color: "#d8dee4",
     },
   };
 

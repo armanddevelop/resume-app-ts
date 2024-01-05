@@ -5,21 +5,24 @@ import { ContextTypeApp } from "../../@types/@types.App";
 
 export const Home = (): JSX.Element => {
   const {
-    configuration: { namePage },
+    configuration: { name, homePresentation },
   } = useContext(ContextApp) || ({} as ContextTypeApp);
 
   return (
-    <Box>
-      <Typography variant="h3">
+    <Box className="container_home">
+      <Typography
+        variant="h1"
+        sx={{
+          fontWeight: "bold",
+          fontSize: "45px",
+          margin: "0px",
+          padding: "0px",
+        }}
+      >
         Hi, <br />
-        I'm {namePage}.
+        I'm {name}.
       </Typography>
-      <div>
-        <p>
-          I'm a Front end developer, trying to become a fullstack developer,
-          this page is made that people know more about my work
-        </p>
-      </div>
+      <div className="content-home">{homePresentation}</div>
     </Box>
   );
 };

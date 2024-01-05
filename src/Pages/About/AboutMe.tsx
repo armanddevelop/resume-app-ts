@@ -3,7 +3,7 @@ export const AboutMe = (): JSX.Element => {
     <div className="about-content">
       <h1>About Page</h1>
       <p>
-        Hello body I'm a enthusiastic of technology I like to learn new things
+        Hello buddy I'm a enthusiastic of technology I like to learn new things
         about codig that help me to improve my code skills.{" "}
       </p>
       <p>
