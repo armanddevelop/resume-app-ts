@@ -5,7 +5,10 @@ import { ContextTypeApp } from "../../@types/@types.App";
 
 export const Home = (): JSX.Element => {
   const {
-    configuration: { name, homePresentation },
+    configuration: {
+      name,
+      homePage: { homePresentation },
+    },
   } = useContext(ContextApp) || ({} as ContextTypeApp);
 
   return (

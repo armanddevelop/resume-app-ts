@@ -10,7 +10,10 @@ import { useProviderSideBar } from "../Hooks/useProviderSideBar";
 
 export const MainComponent = (): JSX.Element => {
   const {
-    configuration: { routes, fullName },
+    configuration: {
+      homePage: { routes, fullName },
+      footerPage: { footerIcons },
+    },
   } = useContext(ContextApp) || ({} as ContextTypeApp);
   const { toggled, breakpoint, setToggle, setBreakPoint } =
     useProviderSideBar();
@@ -49,8 +52,8 @@ export const MainComponent = (): JSX.Element => {
           </Routes>
         </Box>
         <Divider />
-        <Box>
-          <Footer />
+        <Box className="footer-box">
+          <Footer configFooter={footerIcons} />
         </Box>
       </Container>
     </>

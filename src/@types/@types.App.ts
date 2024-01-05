@@ -3,12 +3,24 @@ export interface IRoute {
   name: string;
   element: JSX.Element;
 }
-
-interface IConfiguration {
-  fullName?: string;
+export interface IfooterIcons {
   name: string;
-  routes: IRoute[];
-  homePresentation: JSX.Element;
+  iconComponent: JSX.Element;
+  href: string;
+}
+interface IConfiguration {
+  name: string;
+  homePage: {
+    fullName?: string;
+    routes: IRoute[];
+    homePresentation: JSX.Element;
+  };
+  footerPage: {
+    footerIcons: IfooterIcons[];
+  };
+  aboutPage: {
+    aboutPresentation: JSX.Element;
+  };
 }
 
 export type ContextTypeApp = {

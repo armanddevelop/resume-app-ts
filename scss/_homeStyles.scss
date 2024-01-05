@@ -1,12 +1,19 @@
 .container_home {
   padding: 15px;
   .content-home {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     .presentation {
       font-size: 25px;
       text-align: left;
-      p {
-        margin: 5px;
+      .logos-content {
+        display: flex;
+        justify-content: space-evenly;
       }
+    }
+    .img-developer {
+      width: 100%;
     }
     .react-svg {
       width: 40px;

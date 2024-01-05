@@ -1,17 +1,28 @@
+import { useContext } from "react";
+import { Typography } from "@mui/material";
+import { ContextApp } from "../../Context/ContextApp";
+import { ContextTypeApp } from "../../@types/@types.App";
+
 export const AboutMe = (): JSX.Element => {
+  const {
+    configuration: {
+      aboutPage: { aboutPresentation },
+    },
+  } = useContext(ContextApp) || ({} as ContextTypeApp);
   return (
     <div className="about-content">
-      <h1>About Page</h1>
-      <p>
-        Hello buddy I'm a enthusiastic of technology I like to learn new things
-        about codig that help me to improve my code skills.{" "}
-      </p>
-      <p>
-        in this page you will find some of my work and the tecnologies that I
-        feel confident working on. Also I like to share my knowlege with other
-        people that like to code, so if you want to contact me feel to send me a
-        message in my social media networks
-      </p>
+      <Typography
+        variant="h1"
+        sx={{
+          fontWeight: "bold",
+          fontSize: "45px",
+          margin: "0px",
+          padding: "0px",
+        }}
+      >
+        About.
+      </Typography>
+      {aboutPresentation}
     </div>
   );
 };
