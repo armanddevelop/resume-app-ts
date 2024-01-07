@@ -1,8 +1,8 @@
-import { IfooterIcons } from "../../@types/@types.App";
+import { IIcons } from "../../@types/@types.App";
 import { Link } from "@mui/material";
 
 interface IFooterProps {
-  configFooter: Array<IfooterIcons>;
+  configFooter: Array<IIcons>;
 }
 
 export const Footer = ({ configFooter }: IFooterProps): JSX.Element => {

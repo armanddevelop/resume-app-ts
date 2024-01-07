@@ -13,15 +13,7 @@ export const Home = (): JSX.Element => {
 
   return (
     <Box className="container_home">
-      <Typography
-        variant="h1"
-        sx={{
-          fontWeight: "bold",
-          fontSize: "45px",
-          margin: "0px",
-          padding: "0px",
-        }}
-      >
+      <Typography variant="h1" className="title">
         Hi, <br />
         I'm {name}.
       </Typography>

@@ -4,7 +4,7 @@ import { ContextApp } from "./Context/ContextApp";
 import { ContextTypeApp } from "./@types/@types.App";
 import { HomeFragment } from "./Components/Fragments/HomeFragment";
 import { AboutFragment } from "./Components/Fragments/AboutFragment";
-import { footerIcons, routes } from "./dataConfig/data";
+import { footerIcons, routes, skillsIcons } from "./dataConfig/data";
 
 const App = (): JSX.Element => {
   const contexData: ContextTypeApp = {
@@ -20,6 +20,9 @@ const App = (): JSX.Element => {
       },
       footerPage: {
         footerIcons,
+      },
+      skillsPage: {
+        skillsIcons,
       },
     },
   };

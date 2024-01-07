@@ -3,10 +3,10 @@ export interface IRoute {
   name: string;
   element: JSX.Element;
 }
-export interface IfooterIcons {
+export interface IIcons {
   name: string;
   iconComponent: JSX.Element;
-  href: string;
+  href?: string;
 }
 interface IConfiguration {
   name: string;
@@ -16,10 +16,13 @@ interface IConfiguration {
     homePresentation: JSX.Element;
   };
   footerPage: {
-    footerIcons: IfooterIcons[];
+    footerIcons: IIcons[];
   };
   aboutPage: {
     aboutPresentation: JSX.Element;
+  };
+  skillsPage: {
+    skillsIcons: IIcons[];
   };
 }
 

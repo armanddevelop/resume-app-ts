@@ -1,9 +1,10 @@
 .about-content {
-  display: flex;
   padding: 15px;
-  flex-direction: column;
   p {
     font-size: 25px;
     text-align: left;
+  }
+  .about-image {
+    width: 100%;
   }
 }
