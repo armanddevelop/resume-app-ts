@@ -1,0 +1,31 @@
+.resume-content {
+  ul {
+    padding-left: 10px;
+    li {
+      margin: 5px;
+    }
+  }
+  padding: 15px;
+  .experience-title {
+    margin-top: 15px;
+  }
+  .resume {
+    margin-top: 15px;
+    .company-title {
+      font-size: 20px;
+      color: gray;
+      margin-bottom: 15px;
+    }
+    .position {
+      font-size: 16px;
+      font-weight: bolder;
+      margin-bottom: 10px;
+    }
+    .period-of-time {
+      display: flex;
+      gap: 5px;
+      font-size: 16px;
+      font-weight: bolder;
+    }
+  }
+}

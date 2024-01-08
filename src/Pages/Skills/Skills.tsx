@@ -10,7 +10,7 @@ export const Skills = (): JSX.Element => {
     },
   } = useContext(ContextApp) || ({} as ContextTypeApp);
   return (
-    <Box className="about-content">
+    <Box className="skills-content">
       <Typography variant="h1" className="title">
         Skills.
       </Typography>
