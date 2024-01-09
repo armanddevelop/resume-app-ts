@@ -8,6 +8,16 @@ export interface IIcons {
   iconComponent: JSX.Element;
   href?: string;
 }
+export interface IExperience {
+  companyName: string;
+  position: string;
+  period: string;
+  activities: JSX.Element[];
+}
+export interface IEducation {
+  schoolName: string;
+  degree: string;
+}
 interface IConfiguration {
   name: string;
   homePage: {
@@ -23,6 +33,10 @@ interface IConfiguration {
   };
   skillsPage: {
     skillsIcons: IIcons[];
+  };
+  resumePage: {
+    experience: IExperience[];
+    education: IEducation[];
   };
 }
 
