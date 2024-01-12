@@ -5,6 +5,11 @@
     text-align: left;
   }
   .about-image {
-    width: 100%;
+    max-width: 100%;
+    border-radius: 50px;
+    height: auto;
+    @media (min-width: $breakpoint-tablet) {
+      border-radius: 15px;
+    }
   }
 }

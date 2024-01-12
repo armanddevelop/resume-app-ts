@@ -11,6 +11,9 @@
   }
   .resume {
     margin-top: 15px;
+    @media (min-width: $breakpoint-tablet) {
+      margin-left: 10px;
+    }
     .company-title {
       font-size: 20px;
       color: gray;

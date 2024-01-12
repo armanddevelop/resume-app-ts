@@ -1,10 +1,18 @@
 .header-box {
   display: flex;
   gap: 15px;
-  margin-top: 15px;
+  margin-top: 10px;
+  .MuiButtonBase-root.menu-mobile-button {
+    display: none;
+  }
   .container-navbar {
     aside {
       height: 100%;
+      border-style: none;
+      border-right-style: none;
+      a.active {
+        font-weight: bolder;
+      }
     }
   }
 }

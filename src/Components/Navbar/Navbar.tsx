@@ -1,6 +1,6 @@
 import { type Dispatch, type SetStateAction } from "react";
 import { Sidebar, Menu, MenuItem, type SidebarProps } from "react-pro-sidebar";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { IRoute } from "../../@types/@types.App";
 import { Box, IconButton } from "@mui/material";
@@ -14,13 +14,6 @@ interface INavBarProps extends SidebarProps {
 
 export const NavBar = (props: INavBarProps): JSX.Element => {
   const { routes, setToggle, setBreakPoint, breakpoint, toggled } = props;
-  const button = {
-    [`&.active`]: {
-      backgroundColor: "#044d96",
-      color: "#d8dee4",
-    },
-  };
-
   return (
     <>
       {breakpoint && (
@@ -34,14 +27,14 @@ export const NavBar = (props: INavBarProps): JSX.Element => {
           onBreakPoint={() => setBreakPoint}
           {...props}
         >
-          <Menu menuItemStyles={{ button }}>
+          <Menu>
             {routes.map(({ name, path }) => {
               if (path === "*") return null;
               return (
                 <MenuItem
                   key={name}
                   component={
-                    <Link to={path} onClick={() => setToggle(!toggled)} />
+                    <NavLink to={path} onClick={() => setToggle(!toggled)} />
                   }
                 >
                   {" "}

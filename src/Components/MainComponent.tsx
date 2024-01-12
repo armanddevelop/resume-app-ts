@@ -37,7 +37,7 @@ export const MainComponent = (): JSX.Element => {
             setBreakPoint={setBreakPoint}
             rootStyles={{
               [`.${sidebarClasses.container}`]: {
-                backgroundColor: "aliceblue",
+                backgroundColor: "white",
               },
             }}
           />
@@ -52,7 +52,7 @@ export const MainComponent = (): JSX.Element => {
           </Routes>
         </Box>
       </Box>
-      <Divider variant="middle" />
+      <Divider variant="middle" sx={{ marginTop: "15px" }} />
       <Box className="footer-box">
         <Footer configFooter={footerIcons} />
       </Box>

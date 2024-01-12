@@ -5,7 +5,15 @@ import {
   IExperience,
   IIcons,
 } from "../@types/@types.App";
-import { AboutMe, Experience, Home, NoMatch, Resume, Skills } from "../Pages";
+import {
+  AboutMe,
+  Experience,
+  Home,
+  NoMatch,
+  Resume,
+  Skills,
+  Contact,
+} from "../Pages";
 import {
   SiNodedotjs,
   SiTypescript,
@@ -54,6 +62,11 @@ export const routes = [
     element: <Experience />,
   },
   {
+    path: "/contactme",
+    name: "Contact",
+    element: <Contact />,
+  },
+  {
     path: "*",
     name: "notMatch",
     element: <NoMatch />,
@@ -62,17 +75,17 @@ export const routes = [
 export const footerIcons: Array<IIcons> = [
   {
     name: "github",
-    iconComponent: <GitHub />,
+    iconComponent: <GitHub fontSize="large" />,
     href: "https://github.com/armanddevelop",
   },
   {
     name: "linkedIn",
-    iconComponent: <LinkedIn />,
+    iconComponent: <LinkedIn fontSize="large" />,
     href: "https://www.linkedin.com/in/armando-salamanca-44973a80/",
   },
   {
     name: "email",
-    iconComponent: <Email />,
+    iconComponent: <Email fontSize="large" />,
     href: "mailto:asalamanca.ayon@gmail.com",
   },
 ];
@@ -311,7 +324,7 @@ export const experience: Array<IExperience> = [
 export const education: Array<IEducation> = [
   {
     schoolName: "Centro de enseñanza tecnica industrial CETI",
-    degree: "Bachelor of Electronic engineering in manufacturing",
+    degree: "Bachelor degree of Electronic engineering in manufacturing",
   },
 ];
 
