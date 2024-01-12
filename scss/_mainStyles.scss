@@ -10,6 +10,13 @@ body {
   .application-container {
     padding-left: 0px;
     padding-right: 0px;
+    @media (min-width: $breakpoint-tablet) {
+      display: flex;
+      flex-direction: row;
+      .title_page {
+        display: none;
+      }
+    }
   }
   .title {
     font-weight: bold;

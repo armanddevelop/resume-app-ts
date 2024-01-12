@@ -1,3 +1,4 @@
+import { Container, Link } from "@mui/material";
 import javaScriptSvg from "../../assets/javaScript-logo.svg";
 import reactLogo from "../../assets/react-2.svg";
 import webDevImg from "../../assets/Web-Developer.png";
@@ -7,9 +8,17 @@ export const HomeFragment = (): JSX.Element => {
     <>
       <div className="presentation">
         <p>
-          I'm a frontend developer with 5 years of experience developing web
-          applications, I'm focusing in create the best web applications using
-          <b> JavaScript</b> and <b>React</b>
+          I'm a frontend developer currently work as a consultant by{" "}
+          <Link
+            href="https://www.globant.com/es"
+            target="_blank"
+            underline="hover"
+          >
+            Globant{"  "}
+          </Link>
+          with 5 years of experience developing web applications, I'm focusing
+          in create the best web applications using tecnologies such as{" "}
+          <b> JavaScript</b> and <b>React.</b>
         </p>
         <div className="logos-content">
           <img
@@ -20,9 +29,9 @@ export const HomeFragment = (): JSX.Element => {
           <img className="react-svg" src={reactLogo} alt="reactLogo" />
         </div>
       </div>
-      <div>
+      <Container>
         <img className="img-developer" src={webDevImg} />
-      </div>
+      </Container>
     </>
   );
 };

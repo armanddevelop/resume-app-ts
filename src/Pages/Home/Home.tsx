@@ -14,8 +14,7 @@ export const Home = (): JSX.Element => {
   return (
     <Box className="container_home">
       <Typography variant="h1" className="title">
-        Hi, <br />
-        I'm {name}.
+        Hi, I'm {name}.
       </Typography>
       <div className="content-home">{homePresentation}</div>
     </Box>

@@ -1,4 +1,4 @@
-import { Container, Box, Divider, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import { sidebarClasses } from "react-pro-sidebar";
 import { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
@@ -24,7 +24,7 @@ export const MainComponent = (): JSX.Element => {
   );
   return (
     <>
-      <Container className="application-container">
+      <Box className="application-container">
         <Box className="header-box">
           <NavBar
             transitionDuration={800}
@@ -51,11 +51,11 @@ export const MainComponent = (): JSX.Element => {
             })}
           </Routes>
         </Box>
-        <Divider />
-        <Box className="footer-box">
-          <Footer configFooter={footerIcons} />
-        </Box>
-      </Container>
+      </Box>
+      <Divider variant="middle" />
+      <Box className="footer-box">
+        <Footer configFooter={footerIcons} />
+      </Box>
     </>
   );
 };

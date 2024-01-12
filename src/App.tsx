@@ -10,6 +10,7 @@ import {
   skillsIcons,
   experience,
   education,
+  coursesList,
 } from "./dataConfig/data";
 
 const App = (): JSX.Element => {
@@ -33,6 +34,7 @@ const App = (): JSX.Element => {
       resumePage: {
         experience,
         education,
+        coursesList,
       },
     },
   };

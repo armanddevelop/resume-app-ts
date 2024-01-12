@@ -4,11 +4,12 @@ import { ContextApp } from "../../Context/ContextApp";
 import { ContextTypeApp } from "../../@types/@types.App";
 import { Education } from "../../Components/Education/Education";
 import { Job } from "../../Components/Job/Job";
+import { Course } from "../../Components/CoursesList/Course";
 
 export const Resume = (): JSX.Element => {
   const {
     configuration: {
-      resumePage: { experience, education },
+      resumePage: { experience, education, coursesList },
     },
   } = useContext(ContextApp) || ({} as ContextTypeApp);
   return (
@@ -20,26 +21,20 @@ export const Resume = (): JSX.Element => {
         Experience
       </Typography>
       <div className="resume">
-        {experience.map((props) => (
-          <Job {...props} />
-        ))}
+        <Job experience={experience} />
       </div>
       <div className="education-content">
         <Typography className="experience-title" variant="h5">
           Education
         </Typography>
-        {education.map((props) => (
-          <Education {...props} />
-        ))}
+        <Education education={education} />
       </div>
       <Divider sx={{ marginBottom: "10px" }} />
       <div className="courses-content">
         <Typography className="experience-title" variant="h5">
           Courses
         </Typography>
-        <div className="courses">
-          <ul></ul>
-        </div>
+        <Course courses={coursesList} />
       </div>
     </Box>
   );

@@ -1,4 +1,10 @@
 .header-box {
   display: flex;
+  gap: 15px;
   margin-top: 15px;
+  .container-navbar {
+    aside {
+      height: 100%;
+    }
+  }
 }

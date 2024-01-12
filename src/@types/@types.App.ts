@@ -18,6 +18,10 @@ export interface IEducation {
   schoolName: string;
   degree: string;
 }
+export interface ICourses {
+  nameCourse: string;
+  linkCourse?: string;
+}
 interface IConfiguration {
   name: string;
   homePage: {
@@ -37,6 +41,7 @@ interface IConfiguration {
   resumePage: {
     experience: IExperience[];
     education: IEducation[];
+    coursesList: ICourses[];
   };
 }
 

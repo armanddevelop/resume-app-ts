@@ -1,36 +1,35 @@
 import { Divider, Typography } from "@mui/material";
 import { QueryBuilderTwoTone } from "@mui/icons-material";
-import { Activities } from "../Activities/Activities";
+import { Activitieslist } from "../Activities/Activities";
+import { IExperience } from "../../@types/@types.App";
 
 interface IJobProps {
-  position: string;
-  period: string;
-  companyName: string;
-  activities: JSX.Element[];
+  experience: IExperience[];
 }
 
-export const Job = ({
-  companyName,
-  position,
-  period,
-  activities,
-}: IJobProps): JSX.Element => {
+export const Job = ({ experience }: IJobProps): JSX.Element => {
   return (
-    <div>
-      <Typography className="company-title" variant="h5">
-        {companyName}
-      </Typography>
-      <div className="position">{position}</div>
-      <div className="period-of-time">
-        <QueryBuilderTwoTone color="primary" fontSize="small" />
-        {period}
-      </div>
-      <div className="activities-position">
-        <ul>
-          <Activities activities={activities} />
-        </ul>
-      </div>
-      <Divider sx={{ marginBottom: "10px" }} />
-    </div>
+    <>
+      {experience.map(({ companyName, position, period, activities }, idx) => {
+        return (
+          <div key={idx}>
+            <Typography className="company-title" variant="h5">
+              {companyName}
+            </Typography>
+            <div className="position">{position}</div>
+            <div className="period-of-time">
+              <QueryBuilderTwoTone color="primary" fontSize="small" />
+              {period}
+            </div>
+            <div className="activities-position">
+              <ul>
+                <Activitieslist activities={activities} />
+              </ul>
+            </div>
+            <Divider sx={{ marginBottom: "10px" }} />
+          </div>
+        );
+      })}
+    </>
   );
 };
