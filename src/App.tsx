@@ -2,8 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import { MainComponent } from "./Components/MainComponent";
 import { ContextApp } from "./Context/ContextApp";
 import { ContextTypeApp } from "./@types/@types.App";
-import { HomeFragment } from "./Components/Fragments/HomeFragment";
-import { AboutFragment } from "./Components/Fragments/AboutFragment";
+import { HomeFragment, AboutFragment } from "./Components";
 import {
   footerIcons,
   routes,

@@ -1,3 +1,12 @@
+import { Box, Typography } from "@mui/material";
+
 export const Contact = (): JSX.Element => {
-  return <h1>Contact me</h1>;
+  return (
+    <Box className="container_form">
+      <Typography variant="h1" className="title">
+        Contact
+      </Typography>
+      <div></div>
+    </Box>
+  );
 };

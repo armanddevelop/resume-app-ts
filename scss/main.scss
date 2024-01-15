@@ -1,5 +1,7 @@
 //Variables
-@import "variables/variables.scss";
+@import "variables/variables";
+//mixins
+@import "mixins/utils";
 //components Styles
 @import "aboutStyles";
 @import "mainStyles";
@@ -8,3 +10,4 @@
 @import "footerStyles";
 @import "resumeStyles";
 @import "skillsStyles";
+@import "formStyles";

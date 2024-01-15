@@ -24,17 +24,19 @@ body {
     margin: 0px;
     padding: 0px;
   }
-  img {
-    animation: fadeInAnimation ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    @keyframes fadeInAnimation {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
+  .skills-content {
+    @include fadeInUtil;
+  }
+  .container_home {
+    @include fadeInUtil;
+  }
+  .about-content {
+    @include fadeInUtil;
+  }
+  .resume-content {
+    @include fadeInUtil;
+  }
+  .container_form {
+    @include fadeInUtil;
   }
 }
