@@ -3,6 +3,7 @@ import {
   ICourses,
   IEducation,
   IExperience,
+  IFormFields,
   IIcons,
 } from "../@types/@types.App";
 import {
@@ -353,5 +354,73 @@ export const coursesList: Array<ICourses> = [
     nameCourse: "Graphql Basic",
     linkCourse:
       "https://platzi.com/p/socrasky.salamanca/curso/1512-graphql/diploma/detalle/",
+  },
+];
+export const formFieldsConfig: Array<IFormFields> = [
+  {
+    field: "input",
+    type: "text",
+    id: "name",
+    name: "nameContact",
+    label: "Name",
+    value: "",
+    validations: [
+      {
+        type: "required",
+        description: "The field name is requiered",
+      },
+      {
+        type: "minLength",
+        min: 3,
+        description: "Must be 3 characteres minimum",
+      },
+    ],
+  },
+  {
+    field: "input",
+    type: "text",
+    id: "subject",
+    name: "subject",
+    label: "Subject",
+    value: "",
+    validations: [
+      {
+        type: "required",
+        description: "The field subject is requiered",
+      },
+    ],
+  },
+  {
+    field: "input",
+    type: "email",
+    isText: true,
+    id: "email",
+    name: "email",
+    label: "Email",
+    value: "",
+    validations: [
+      {
+        type: "required",
+        description: "The field email is requiered",
+      },
+      {
+        type: "email",
+        description: "the email must be a valid email",
+      },
+    ],
+  },
+  {
+    field: "textarea",
+    type: "textarea",
+    id: "message",
+    name: "message",
+    placeholder: "Message",
+    value: "",
+    validations: [
+      {
+        type: "required",
+        description: "The field message is requiered",
+      },
+    ],
   },
 ];

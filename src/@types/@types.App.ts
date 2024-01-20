@@ -22,6 +22,22 @@ export interface ICourses {
   nameCourse: string;
   linkCourse?: string;
 }
+interface IValidation {
+  type: string;
+  description: string;
+  min?: number;
+}
+export interface IFormFields {
+  field: string;
+  type: string;
+  id: string;
+  name: string;
+  value: string;
+  label?: string;
+  isText?: boolean;
+  placeholder?: string;
+  validations?: Array<IValidation>;
+}
 interface IConfiguration {
   name: string;
   homePage: {
@@ -42,6 +58,9 @@ interface IConfiguration {
     experience: IExperience[];
     education: IEducation[];
     coursesList: ICourses[];
+  };
+  contactPage: {
+    formFields: IFormFields[];
   };
 }
 

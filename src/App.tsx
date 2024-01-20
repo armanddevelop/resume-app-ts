@@ -10,6 +10,7 @@ import {
   experience,
   education,
   coursesList,
+  formFieldsConfig,
 } from "./dataConfig/data";
 
 const App = (): JSX.Element => {
@@ -34,6 +35,9 @@ const App = (): JSX.Element => {
         experience,
         education,
         coursesList,
+      },
+      contactPage: {
+        formFields: formFieldsConfig,
       },
     },
   };
