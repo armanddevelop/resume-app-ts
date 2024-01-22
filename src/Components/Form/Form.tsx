@@ -35,13 +35,12 @@ export const GeneralForm = ({
           message: "",
         }}
       >
-        {({ errors, setFieldValue, touched }) => {
+        {({ errors, setFieldValue }) => {
           const fields = formFields.map(
             ({ field, name, value, type, label, placeholder }) => {
               if (field === "input") {
                 return (
                   <InputField
-                    touched={touched}
                     errors={errors}
                     setFieldValue={setFieldValue}
                     attrElements={{
@@ -49,6 +48,7 @@ export const GeneralForm = ({
                       value,
                       type,
                       label,
+                      fullWidth: true,
                       margin: "normal",
                       variant: "outlined",
                     }}
@@ -63,6 +63,7 @@ export const GeneralForm = ({
                       value,
                       rows: 8,
                       multiline: true,
+                      fullWidth: true,
                     }}
                     setFieldValue={setFieldValue}
                     errors={errors}
@@ -76,7 +77,12 @@ export const GeneralForm = ({
               {fields.map((field, idx) => (
                 <div key={idx}>{field}</div>
               ))}
-              <Button variant="contained" type="submit">
+              <Button
+                variant="contained"
+                type="submit"
+                size="medium"
+                className="send-message"
+              >
                 Send message
               </Button>
             </Form>

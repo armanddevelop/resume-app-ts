@@ -25,12 +25,13 @@ export const TextTareaField = ({
   const errorMessage = errors[attrElements.name as string]
     ? (errors[attrElements.name as string] as string)
     : "";
+  const isError = Object.keys(errors).includes(attrElements.name as string);
   return (
     <TextField
       {...attrElements}
       onChange={onChange}
       value={value}
-      error={Object.keys(errors).length > 0}
+      error={isError}
       helperText={errorMessage}
     />
   );
