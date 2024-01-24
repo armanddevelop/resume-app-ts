@@ -3,9 +3,8 @@ import { useState, type FormHTMLAttributes } from "react";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import { IFormFields } from "../../@types/@types.App";
-import { InputField } from "../Fields/InputField";
-import { InputField as TextTareaField } from "../Fields/InputField";
 import { Button } from "@mui/material";
+import { BuildFieldsComponent } from "./BuildFieldsComponent";
 
 interface IGeneralFormProps extends FormHTMLAttributes<HTMLFormElement> {
   formFields: Array<IFormFields>;
@@ -51,48 +50,10 @@ export const GeneralForm = ({
         }}
         initialValues={initialFieldsValues}
       >
-        {({ errors, setFieldValue }) => {
-          const fields = formFields.map(
-            ({ field, name, value, type, label, placeholder }) => {
-              if (field === "input") {
-                return (
-                  <InputField
-                    errors={errors}
-                    setFieldValue={setFieldValue}
-                    attrElements={{
-                      name,
-                      value,
-                      type,
-                      label,
-                      fullWidth: true,
-                      margin: "normal",
-                      variant: "outlined",
-                    }}
-                  />
-                );
-              } else if (field === "textarea") {
-                return (
-                  <TextTareaField
-                    attrElements={{
-                      name,
-                      placeholder,
-                      value,
-                      rows: 8,
-                      multiline: true,
-                      fullWidth: true,
-                    }}
-                    setFieldValue={setFieldValue}
-                    errors={errors}
-                  />
-                );
-              }
-            }
-          );
+        {({ errors }) => {
           return (
             <Form noValidate className={className}>
-              {fields.map((field, idx) => (
-                <div key={idx}>{field}</div>
-              ))}
+              <BuildFieldsComponent formFields={formFields} errors={errors} />
               <Button
                 variant="contained"
                 type="submit"

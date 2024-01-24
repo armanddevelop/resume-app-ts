@@ -6,7 +6,7 @@ import { type InputHTMLAttributes } from "react";
 type Input = InputHTMLAttributes<HTMLInputElement>;
 type IAttrElement = Input & TextFieldProps;
 interface IInputProps {
-  setFieldValue: (
+  setFieldValue?: (
     field: string,
     value: any,
     shouldValidate?: boolean

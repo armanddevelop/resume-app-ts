@@ -1,10 +1,12 @@
-import { useContext, useState } from "react";
-import { Box, Container, Typography, Snackbar, Alert } from "@mui/material";
+import { useContext } from "react";
+import { Box, Container, Typography } from "@mui/material";
 import { GeneralForm } from "../../Components/Form/Form";
 import { ContextApp } from "../../Context/ContextApp";
 import { ContextTypeApp } from "../../@types/@types.App";
 import { setInitialValues, setValidations } from "../../utils/utils";
 import { sendEmail } from "../../Api/apis";
+import { AlertMessage } from "../../Components/Alert/Alert";
+import { useAlertMessage } from "../../Hooks/useAlertMessage";
 
 export const Contact = (): JSX.Element => {
   const {
@@ -13,19 +15,8 @@ export const Contact = (): JSX.Element => {
   const { formFields } = contactPage;
   const initialFieldsValues = setInitialValues(formFields);
   const validations = setValidations(formFields);
-  const [openAlert, setOpenAlert] = useState<boolean>(false);
-  const [isSuccess, setIsSuccess] = useState<boolean>(true);
-  const position = {
-    vertical: "top",
-    horizontal: "center",
-  };
-  const handleClose = (
-    event?: React.SyntheticEvent | Event,
-    reason?: string
-  ) => {
-    if (reason === "clickaway") return;
-    setOpenAlert(false);
-  };
+  const { setOpenAlert, setIsSuccess, handleClose, isSuccess, openAlert } =
+    useAlertMessage();
   return (
     <Box className="container_form">
       <Typography variant="h1" className="title">
@@ -45,24 +36,11 @@ export const Contact = (): JSX.Element => {
           setOpenAlert={setOpenAlert}
           setIsSuccess={setIsSuccess}
         />
-        <Box>
-          <Snackbar
-            open={openAlert}
-            autoHideDuration={4000}
-            onClose={handleClose}
-            anchorOrigin={{ vertical: "top", horizontal: "center" }}
-            key={position.vertical + position.horizontal}
-          >
-            <Alert
-              severity={isSuccess ? "success" : "error"}
-              variant="filled"
-              sx={{ width: "100%" }}
-              onClose={handleClose}
-            >
-              {isSuccess ? "Success send Email" : "Opps!! try again later :("}
-            </Alert>
-          </Snackbar>
-        </Box>
+        <AlertMessage
+          openAlert={openAlert}
+          isSuccess={isSuccess}
+          handleClose={handleClose}
+        />
       </Container>
     </Box>
   );
