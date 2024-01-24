@@ -24,8 +24,9 @@ export interface ICourses {
 }
 interface IValidation {
   type: string;
-  description: string;
-  min?: number;
+  errorMessage: string;
+  errorMessageField?: string;
+  value?: number;
 }
 export interface IFormFields {
   field: string;

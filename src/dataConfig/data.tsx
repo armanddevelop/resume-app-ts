@@ -366,27 +366,13 @@ export const formFieldsConfig: Array<IFormFields> = [
     value: "",
     validations: [
       {
-        type: "required",
-        description: "The field name is requiered",
+        type: "string",
+        errorMessage: "The field name is requiered",
       },
       {
         type: "minLength",
-        min: 3,
-        description: "Must be 3 characteres minimum",
-      },
-    ],
-  },
-  {
-    field: "input",
-    type: "text",
-    id: "subject",
-    name: "subject",
-    label: "Subject",
-    value: "",
-    validations: [
-      {
-        type: "required",
-        description: "The field subject is requiered",
+        value: 3,
+        errorMessage: "Must be 3 characteres minimum",
       },
     ],
   },
@@ -400,12 +386,9 @@ export const formFieldsConfig: Array<IFormFields> = [
     value: "",
     validations: [
       {
-        type: "required",
-        description: "The field email is requiered",
-      },
-      {
         type: "email",
-        description: "the email must be a valid email",
+        errorMessage: "The field email is requiered",
+        errorMessageField: "the email must be a valid email",
       },
     ],
   },
@@ -418,8 +401,8 @@ export const formFieldsConfig: Array<IFormFields> = [
     value: "",
     validations: [
       {
-        type: "required",
-        description: "The field message is requiered",
+        type: "string",
+        errorMessage: "The field message is requiered",
       },
     ],
   },
