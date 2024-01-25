@@ -10,11 +10,7 @@ interface IGeneralFormProps extends FormHTMLAttributes<HTMLFormElement> {
   formFields: Array<IFormFields>;
   initialFieldsValues: { [key: string]: string | number | boolean };
   validationsSchema: any;
-  submitFunction?: (values: {
-    [key: string]: string | number | boolean;
-  }) => Promise<any>;
-  setOpenAlert?: React.Dispatch<React.SetStateAction<boolean>>;
-  setIsSuccess?: React.Dispatch<React.SetStateAction<boolean>>;
+  submitFunction?: ({ values, resetform, setDisable }: any) => Promise<void>;
 }
 
 export const GeneralForm = ({
@@ -23,8 +19,6 @@ export const GeneralForm = ({
   initialFieldsValues,
   validationsSchema,
   submitFunction,
-  setOpenAlert,
-  setIsSuccess,
 }: IGeneralFormProps): JSX.Element => {
   const validations = Yup.object({ ...validationsSchema });
   const [disableButton, setDisable] = useState<boolean>(false);
@@ -35,17 +29,7 @@ export const GeneralForm = ({
         onSubmit={async (values, { resetForm }) => {
           if (submitFunction) {
             setDisable(true);
-            const response = await submitFunction(values);
-            if (response === 200) {
-              setOpenAlert && setOpenAlert(true);
-              setIsSuccess && setIsSuccess(true);
-              setDisable(false);
-              resetForm();
-            } else {
-              setDisable(false);
-              setOpenAlert && setOpenAlert(true);
-              setIsSuccess && setIsSuccess(false);
-            }
+            await submitFunction({ values, resetForm, setDisable });
           }
         }}
         initialValues={initialFieldsValues}
