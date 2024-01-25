@@ -6,7 +6,6 @@ interface IEducationProps {
 }
 
 export const Education = ({ education }: IEducationProps): JSX.Element => {
-  console.log("esto vale educvation ", education);
   return (
     <>
       {education.map(({ schoolName, degree }, idx) => {

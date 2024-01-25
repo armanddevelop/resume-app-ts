@@ -5,8 +5,6 @@ export const AboutFragment = (): JSX.Element => {
   return (
     <>
       <p>
-        Hello Human.
-        <br />
         I'm enthusiastic of technology, In this page you will find some of my
         work and the technologies that I feel confident working on.
       </p>

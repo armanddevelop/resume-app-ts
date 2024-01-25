@@ -33,6 +33,7 @@ import {
   SiJsonwebtokens,
   SiHtml5,
 } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
 import { FaGears } from "react-icons/fa6";
 import Link from "@mui/material/Link";
 
@@ -99,7 +100,10 @@ export const skillsIcons: Array<IIcons> = [
     name: "React",
     iconComponent: <SiReact />,
   },
-
+  {
+    name: "NextJS",
+    iconComponent: <TbBrandNextjs />,
+  },
   {
     name: "Redux",
     iconComponent: <SiRedux />,
