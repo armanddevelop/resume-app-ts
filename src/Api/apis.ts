@@ -1,13 +1,14 @@
 import emailjs from "@emailjs/browser";
+
 interface IValuesForm {
   [key: string]: string | boolean | number;
 }
 
 export const sendEmail = async (valuesForm: IValuesForm) => {
   try {
-    const SERVICE_ID = "service_cb5scab";
-    const TEMPLATE_ID = "template_8wz6ug5";
-    const PUBLIC_KEY = "hvgS5Pxc7euj2eb7h";
+    const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
     const templateParams = {
       to_name: "armando salamanca",
       from_name: valuesForm.nameContact,
