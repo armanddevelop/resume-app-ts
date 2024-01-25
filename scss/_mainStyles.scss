@@ -26,6 +26,12 @@ body {
   }
   .skills-content {
     @include fadeInUtil;
+    margin-top: 10px;
+    div {
+      p {
+        font-weight: bold;
+      }
+    }
   }
   .container_home {
     @include fadeInUtil;

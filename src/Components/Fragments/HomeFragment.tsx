@@ -8,7 +8,7 @@ export const HomeFragment = (): JSX.Element => {
     <>
       <div className="presentation">
         <p>
-          I'm a frontend developer currently work as a consultant by{" "}
+          I'm a frontend developer currently working as a consultant by{" "}
           <Link
             href="https://www.globant.com/es"
             target="_blank"
