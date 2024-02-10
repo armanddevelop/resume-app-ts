@@ -39,6 +39,11 @@ export interface IFormFields {
   placeholder?: string;
   validations?: Array<IValidation>;
 }
+export interface IProject {
+  img: string;
+  url: string;
+  title: string;
+}
 interface IConfiguration {
   name: string;
   homePage: {
@@ -62,6 +67,9 @@ interface IConfiguration {
   };
   contactPage: {
     formFields: IFormFields[];
+  };
+  experiencePage: {
+    projects: IProject[];
   };
 }
 

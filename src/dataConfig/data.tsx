@@ -5,6 +5,7 @@ import {
   IExperience,
   IFormFields,
   IIcons,
+  IProject,
 } from "../@types/@types.App";
 import {
   AboutMe,
@@ -36,6 +37,10 @@ import {
 import { TbBrandNextjs } from "react-icons/tb";
 import { FaGears } from "react-icons/fa6";
 import Link from "@mui/material/Link";
+import telcel from "../assets/Telcel_logo.jpg";
+import herbalife from "../assets/herbalife.png";
+import ticketmaster from "../assets/ticketmaster.jpg";
+import livenation from "../assets/livenation.png";
 
 export const routes = [
   {
@@ -409,5 +414,27 @@ export const formFieldsConfig: Array<IFormFields> = [
         errorMessage: "The field message is requiered",
       },
     ],
+  },
+];
+export const projects: Array<IProject> = [
+  {
+    img: telcel,
+    title: "TELCEL",
+    url: "https://www.telcel.com",
+  },
+  {
+    img: herbalife,
+    title: "HERBALIFE MEXICO",
+    url: "https://www.herbalife.com/es-mx",
+  },
+  {
+    img: ticketmaster,
+    title: "TICKET MASTER",
+    url: "https://www.ticketmaster.com/",
+  },
+  {
+    img: livenation,
+    title: "LIVENATION",
+    url: "https://www.livenation.lat/",
   },
 ];

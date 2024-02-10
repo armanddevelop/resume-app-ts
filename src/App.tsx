@@ -11,6 +11,7 @@ import {
   education,
   coursesList,
   formFieldsConfig,
+  projects,
 } from "./dataConfig/data";
 
 const App = (): JSX.Element => {
@@ -38,6 +39,9 @@ const App = (): JSX.Element => {
       },
       contactPage: {
         formFields: formFieldsConfig,
+      },
+      experiencePage: {
+        projects,
       },
     },
   };
