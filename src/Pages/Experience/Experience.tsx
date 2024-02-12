@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import {
-  Box,
-  IconButton,
+  Container,
   ImageList,
   ImageListItem,
   ImageListItemBar,
+  Link,
 } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 import { ContextApp } from "../../Context/ContextApp";
@@ -16,9 +16,8 @@ export const Experience = (): JSX.Element => {
       experiencePage: { projects },
     },
   } = useContext(ContextApp) || ({} as ContextTypeApp);
-
   return (
-    <Box className="experience-content">
+    <Container className="containter-experience">
       <h1>Experience</h1>
       <ImageList>
         {projects.map(({ url, title, img }) => (
@@ -27,17 +26,19 @@ export const Experience = (): JSX.Element => {
             <ImageListItemBar
               title={title}
               actionIcon={
-                <IconButton
+                <Link
                   sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                  aria-label={`info about ${title}`}
+                  href={url}
+                  target="_blank"
+                  underline="hover"
                 >
-                  <InfoIcon />
-                </IconButton>
+                  <InfoIcon fontSize="medium" />
+                </Link>
               }
             />
           </ImageListItem>
         ))}
       </ImageList>
-    </Box>
+    </Container>
   );
 };

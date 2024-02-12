@@ -45,4 +45,7 @@ body {
   .container_form {
     @include fadeInUtil;
   }
+  .containter-experience {
+    @include fadeInUtil;
+  }
 }
